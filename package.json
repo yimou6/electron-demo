@@ -1,0 +1,46 @@
+{
+  "name": "electron-demo",
+  "version": "1.0.0",
+  "description": "a electron demo",
+  "main": "main.js",
+  "repository": {
+    "url": "https://github.com/yimou6/electron-demo.git"
+  },
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "publish": "electron-builder --publish always"
+  },
+  "author": "yimou6",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^9.0.5",
+    "electron-builder": "^22.7.0"
+  },
+  "build": {
+    "appId": "id",
+    "productName": "一个Demo",
+    "copyright": "Copyright © 2020 YiJieBin",
+    "nsis": {
+      "oneClick": false
+    },
+    "mac": {
+      "category": "public.app-category.utilities",
+      "target": "dmg"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.png",
+      "publish": "github"
+    },
+    "linux": {
+      "target": "deb"
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "yimou6"
+      }
+    ]
+  }
+}
